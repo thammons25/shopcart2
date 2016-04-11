@@ -1,0 +1,25 @@
+PROCEDURE FOR CREATING NEW USER 
+
+1). DISPLAY FORM FOR USERNAME/PASSWORD UPON REQUEST FOR PAGE 
+	-only available if $_SESSION["logStatus"] = 0
+	-automatically add to customers( id ) , will auto increment 
+	-retreive that customers( id ) value retroactively , store as $_SESSION["customerID"]
+
+2). once form successfully submitted 
+	-insert username/password into logins 
+	-retreive the logins( id ) and logins( username )
+		-$_SESSION["logID"] = logins( id )
+		-$_SESSION["logName"] = logins( username )
+
+3).Upon success in step two , prompt for personal information 
+	-form page will autmatically show up upon #2 submisstion
+	-$_SESSION["personID"] = persons( id )
+
+4).Rather than auto redirect as we did before, after success in #3 
+display button saying something like "start shopping"
+	-start shopping button wil insert id , date into orders w/total = 0
+	-retroactively retreive orders( id )
+		-$_SESSION["orderID"] = orders( id )
+	-subsequently insert into personOrder 
+		-poCustomer = $_SESSION["customerID"]
+		-poOrder = $_SESSION["orderID"]

@@ -1,0 +1,25 @@
+!!!! VARIABLES !!!!
+
+TO REPRESENT A LOGGED IN USER OR LOGGED OUT USER
+login status -> $_SESSION["logStatus"]
+	Logged In = 1 
+	Logged Out = 0
+
+
+
+ID NUMBER RELATED  
+
+login id -> $_SESSION["logID"]
+customer id -> $_SESSION["customerID"]
+current order id -> $_SESSION["orderID"]
+person id -> $_SESSION["personID"]
+
+
+USER NAME RELATED
+
+login name -> $_SESSION["logName"]
+first name of person $_SESSION["forname"];
+last name of person $_SESSION["surname"]
+
+
+

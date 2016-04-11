@@ -1,0 +1,16 @@
+PROCEDURE: ADDING ITEM TO SHOPPING CART( ACTIVE )
+
+1).User selects the product and quantity and chooses to add to cart 
+	-insert the productID , quantity , and customerID into productAmt 
+
+2).Calculate the net total of THAT SINGLE PURCHASE 
+	-If needed retreive the price of the product from products 
+		-select price from products where prodID = $_GET["prodID"]
+	-If you dont need it then just use the price hidden input thing 
+	-Multiply by the productAmt( quantity )
+	-Store that in a temporary session variable 
+		$_SESSION["purchaseCost"] = productAmt( quantity ) * products( price )
+
+3).Update the new order total for that user 
+	-orders( total ) += $_SESSION["purchaseCost"] 
+	-$_SESSION["purchaseCost"] = 0;
